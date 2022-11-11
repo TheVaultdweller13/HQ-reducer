@@ -11,7 +11,7 @@
 using namespace std;
 
 const static int PRIMES_INTO = 1000000000;
-const static int NUMBERT_TO_REDUCT = 412122;
+const static int NUMBERT_TO_REDUCT = 120;
 
 vector<int> primes;
 
@@ -57,13 +57,15 @@ vector<int> reduction(int n, vector<int> primes) {
 
 void reduce(int n) {
     cout << "Reduce " << n << endl << "Loading primes..." << endl;
-    long delay = 1L;
+    int delay = 1;
     while (true) {
+        cout << "Primes loaded: " << primes.size() << endl;
+
         if (primes.size() > 0 && n < primes.at(primes.size() - 1)) {
             break;
         }
         Sleep(delay);
-        delay = delay/2 < LONG_MAX ? delay * 2 : delay;
+        delay = delay / 2 < INT_MAX ? delay = delay * 2 : delay;
     }
 
     vector<int> reductions = reduction(NUMBERT_TO_REDUCT, primes);
@@ -73,7 +75,6 @@ void reduce(int n) {
         cout << "\n" << reductions[i];
     }
     cout << "\nREDUCTION LENGTH: " << reductions.size();
-
 }
 
 void run(thread th1, thread th2) {
