@@ -4,6 +4,9 @@
 #include <cmath>
 using namespace std;
 
+const static int PRIMES_INTO = 100000;
+const static int NUMBERT_TO_REDUCT = 44025;
+
 vector<int> sieve(int n) {
     vector<bool> isPrime = vector<bool>(n, true);
     vector<int> primes = vector<int>();
@@ -48,14 +51,12 @@ vector<int> reduction(int n, vector<int> primes) {
 
 int main() {
 
-    vector<int> primes = sieve(300000);
-    int number = 40;
-    vector<int> reductions = reduction(number, primes);
+    vector<int> primes = sieve(PRIMES_INTO);
+    vector<int> reductions = reduction(NUMBERT_TO_REDUCT, primes);
 
-    cout << number << " WAS REDUCTED WITH: ";
+    cout << NUMBERT_TO_REDUCT << " WAS REDUCTED WITH: ";
     for (int i = 0; i < reductions.size(); i++) {
         cout << "\n" << reductions[i];
     }
     cout << "\nREDUCTION LENGTH: " << reductions.size();
 }
-
