@@ -1,4 +1,4 @@
 ﻿  HQ-reducer.cpp
-d:\programacion\visual studio\hq-reducer\hq-reducer\hq-reducer.cpp(56): warning C4018: '<': no coinciden signed/unsigned
-d:\programacion\visual studio\hq-reducer\hq-reducer\hq-reducer.cpp(35): warning C4715: 'nearest': no todas las rutas de acceso de control devuelven un valor
-  HQ-reducer.vcxproj -> D:\PROGRAMACION\Visual Studio\HQ-reducer\Debug\HQ-reducer.exe
+d:\programacion\hq-reducer\hq-reducer\hq-reducer.cpp(62): warning C4018: '<': no coinciden signed/unsigned
+d:\programacion\hq-reducer\hq-reducer\hq-reducer.cpp(38): warning C4715: 'nearest': no todas las rutas de acceso de control devuelven un valor
+  HQ-reducer.vcxproj -> D:\PROGRAMACION\HQ-reducer\Debug\HQ-reducer.exe

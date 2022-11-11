@@ -1,15 +1,16 @@
 #include <iostream>
 #include <vector>
-#include <vector>
 #include <cmath>
+#include <thread>
 using namespace std;
 
-const static int PRIMES_INTO = 100000;
-const static int NUMBERT_TO_REDUCT = 44025;
+const static int PRIMES_INTO = 1000000000;
+const static int NUMBERT_TO_REDUCT = 126;
 
-vector<int> sieve(int n) {
+vector<int> primes;
+
+void sieve(int n) {
     vector<bool> isPrime = vector<bool>(n, true);
-    vector<int> primes = vector<int>();
     isPrime[0] = isPrime[1] = false;
     for (int i = 2; i < n; ++i) {
         if (isPrime[i]) {
@@ -19,7 +20,6 @@ vector<int> sieve(int n) {
             }
         }
     }
-    return primes;
 }
 
 int nearest(int n, vector<int> primes) {
@@ -48,10 +48,15 @@ vector<int> reduction(int n, vector<int> primes) {
 
     return reductions;
 }
+void reduce(int n) {
+    cout << "Reduce " << n << endl << "Loading primes..." << endl;
+    while (true) {
+        cout << "";
+        if (primes.size() > 0 && n < primes.at(primes.size() - 1)) {
+            break;
+        }
+    }
 
-int main() {
-
-    vector<int> primes = sieve(PRIMES_INTO);
     vector<int> reductions = reduction(NUMBERT_TO_REDUCT, primes);
 
     cout << NUMBERT_TO_REDUCT << " WAS REDUCTED WITH: ";
@@ -59,4 +64,20 @@ int main() {
         cout << "\n" << reductions[i];
     }
     cout << "\nREDUCTION LENGTH: " << reductions.size();
+
+}
+
+
+int main() {
+
+    //vector<int> primes = sieve(PRIMES_INTO);
+
+    thread th1(sieve, PRIMES_INTO);
+    thread th2(reduce, NUMBERT_TO_REDUCT);
+    th2.join();
+    th1.join();
+
+    cout << endl << "Number of primes between 0 and " << PRIMES_INTO << ": " << primes.size() << endl;
+
+    system("pause");
 }
