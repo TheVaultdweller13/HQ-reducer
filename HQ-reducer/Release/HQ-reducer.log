@@ -1,8 +1,8 @@
 ﻿  HQ-reducer.cpp
-d:\programacion\hq-reducer\hq-reducer\hq-reducer.cpp(63): warning C4018: '<': no coinciden signed/unsigned
+d:\programacion\hq-reducer\hq-reducer\hq-reducer.cpp(72): warning C4018: '<': no coinciden signed/unsigned
   Generando código
-  1 of 268 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  2 of 325 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   HQ-reducer.vcxproj -> D:\PROGRAMACION\HQ-reducer\Release\HQ-reducer.exe

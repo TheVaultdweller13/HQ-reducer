@@ -1,2 +1,8 @@
 ﻿  HQ-reducer.cpp
 d:\programacion\hq-reducer\hq-reducer\hq-reducer.cpp(26): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Generando código
+  3 of 268 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  HQ-reducer.vcxproj -> D:\PROGRAMACION\HQ-reducer\x64\Release\HQ-reducer.exe

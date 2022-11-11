@@ -1,3 +1,9 @@
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -5,7 +11,7 @@
 using namespace std;
 
 const static int PRIMES_INTO = 1000000000;
-const static int NUMBERT_TO_REDUCT = 126;
+const static int NUMBERT_TO_REDUCT = 412122;
 
 vector<int> primes;
 
@@ -48,13 +54,16 @@ vector<int> reduction(int n, vector<int> primes) {
 
     return reductions;
 }
+
 void reduce(int n) {
     cout << "Reduce " << n << endl << "Loading primes..." << endl;
+    long delay = 1L;
     while (true) {
-        cout << "";
         if (primes.size() > 0 && n < primes.at(primes.size() - 1)) {
             break;
         }
+        Sleep(delay);
+        delay = delay/2 < LONG_MAX ? delay * 2 : delay;
     }
 
     vector<int> reductions = reduction(NUMBERT_TO_REDUCT, primes);
@@ -67,17 +76,25 @@ void reduce(int n) {
 
 }
 
+void run(thread th1, thread th2) {
+    try {
+        th1.join();
+        th2.join();
+
+        cout << endl << "Number of primes between 0 and " << PRIMES_INTO << ": " << primes.size() << endl;
+        system("pause");
+
+    } catch (exception e) {
+        throw e;
+    }
+}
+
 
 int main() {
+    thread(
+        run, 
+        thread(sieve, PRIMES_INTO), 
+        thread(reduce, NUMBERT_TO_REDUCT)
+    ).join();
 
-    //vector<int> primes = sieve(PRIMES_INTO);
-
-    thread th1(sieve, PRIMES_INTO);
-    thread th2(reduce, NUMBERT_TO_REDUCT);
-    th2.join();
-    th1.join();
-
-    cout << endl << "Number of primes between 0 and " << PRIMES_INTO << ": " << primes.size() << endl;
-
-    system("pause");
 }
