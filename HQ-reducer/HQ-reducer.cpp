@@ -11,7 +11,7 @@
 using namespace std;
 
 const static int PRIMES_INTO = 1000000000;
-const static int NUMBERT_TO_REDUCT = 120;
+const static int NUMBER_TO_REDUCT = 500000;
 
 vector<int> primes;
 
@@ -68,9 +68,9 @@ void reduce(int n) {
         delay = delay / 2 < INT_MAX ? delay = delay * 2 : delay;
     }
 
-    vector<int> reductions = reduction(NUMBERT_TO_REDUCT, primes);
+    vector<int> reductions = reduction(NUMBER_TO_REDUCT, primes);
 
-    cout << NUMBERT_TO_REDUCT << " WAS REDUCTED WITH: ";
+    cout << NUMBER_TO_REDUCT << " WAS REDUCTED WITH: ";
     for (int i = 0; i < reductions.size(); i++) {
         cout << "\n" << reductions[i];
     }
@@ -95,7 +95,7 @@ int main() {
     thread(
         run, 
         thread(sieve, PRIMES_INTO), 
-        thread(reduce, NUMBERT_TO_REDUCT)
+        thread(reduce, NUMBER_TO_REDUCT)
     ).join();
 
 }
