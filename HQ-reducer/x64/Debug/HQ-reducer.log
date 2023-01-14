@@ -1,4 +1,0 @@
-﻿  HQ-reducer.cpp
-d:\programacion\hq-reducer\hq-reducer\hq-reducer.cpp(32): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-d:\programacion\hq-reducer\hq-reducer\hq-reducer.cpp(44): warning C4715: 'nearest': no todas las rutas de acceso de control devuelven un valor
-  HQ-reducer.vcxproj -> D:\PROGRAMACION\HQ-reducer\x64\Debug\HQ-reducer.exe

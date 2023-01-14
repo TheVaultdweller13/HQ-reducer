@@ -33,3 +33,14 @@
 
 # VS
 .vs/*
+
+# Folders
+Debug/
+Release/
+x64/
+
+# Visual Studio files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
